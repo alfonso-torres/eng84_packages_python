@@ -1,19 +1,16 @@
 from random import random # generates random numbers
 import math
 
-# print(random())
+print(random())
+num_float = 23.6
 
-# num_float = 23.6
+print("Actual float value " + str(num_float))
+print(math.ceil(num_float)) # if number .5 round it up
+print(num_float.__round__())
 
-# print("Actual float value " + str(num_float))
-# print(math.ceil(num_float)) # if number .5 round it up
-# ceil() rounds up the value
-# print(num_float.__round__())
-
-# print(math.floor(num_float)) # if number .4 or less round it down
+print(math.floor(num_float)) # if number .4 or less round it down
 
 # Python Modules
-
 import os
 import datetime, sys
 
