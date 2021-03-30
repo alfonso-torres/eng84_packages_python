@@ -64,7 +64,7 @@ pip list
 Create a function called status_code_check to check the status of a website. <br/>
 - To install the package request:
 ````commandline
-pip3 install requests
+pip install requests
 ````
 Function should return status code with appropriate message. <br/>
 DRY.
@@ -84,3 +84,53 @@ status_code_check(website)
 # We can see the benefits of using packages in the conditions statements
 # They will return any code without asking conditions in the "if" statement 
 ````
+## What is API
+
+API is the acronym for Application Programming Interface, that means software intermediary that allows two applications to talk each other within the API. So is a set of programing code that enables data transmission between one software product and another.
+
+### Why should we use it
+
+The benefits of using API are:
+1. Better integration: you can integrate your applications with third parties in order to optimize their functionality and to improve usability.
+2. Automating tasks: Thanks to automation and integration of processes your business can save costs, time and efforts.
+3. Improved services: APIs simplify the implementation of new applications, business models and digital products and allow an effective complementation with third-party products or services whilst improving their development.
+
+__Let's see one example:__
+
+We will usi the API for postcode.io. We will do a request to get the results for a specific postcode. Let's see one example:
+````python
+import requests
+
+url = "http://api.postcodes.io/postcodes/" #API where we will get the result
+postcode = "xxxxxxx" #whatever you would like
+
+url_arg = url + postcode
+print(url_arg)
+
+# method sends a GET request to the specified url - Make a request to a web page
+response = requests.get(url_arg)
+print(response.status_code) # return the status code
+response_dict = response.json() # Get the results in format JSON
+response_keys = response_dict["result"]
+# Let's get some information from the postcode we requested
+for items in response_keys.keys():
+    if items == "postcode":
+        print("Your postcode locations is " + str(response_keys["postcode"]))
+
+    if items == "longitude":
+        print("Your longitude is " + str(response_keys["longitude"]))
+    elif items == "latitude":
+        print("Your latitude is " + str(response_keys["latitude"]))
+````
+Check you have installed the package `requests`. You can see the command above.
+
+## TASK:
+Create an API in which you can obtain user information to make a request, validating the connection and obtaining the desired result:
+1. Greeting user.
+2. Ask user to input data.
+3. Validate connection.
+4. Create a class.
+5. Check status code.
+6. Check weather.
+
+Check the results in the file: `python_api_weather.py`
