@@ -88,6 +88,8 @@ status_code_check(website)
 
 API is the acronym for Application Programming Interface, that means software intermediary that allows two applications to talk each other within the API. So is a set of programing code that enables data transmission between one software product and another.
 
+![TDD](https://github.com/alfonso-torres/eng84_packages_python/blob/main/API_HTTP.png)
+
 ### Why should we use it
 
 The benefits of using API are:
